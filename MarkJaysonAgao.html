@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+ 
+  <title>Minecraft</title>
+  
+<link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/minecraftia" type="text/css"/>
+
+
+  <style>
+    @import url('https://fonts.cdnfonts.com/css/minecraft-4');
+    
+body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  padding:0;
+  margin:0;
+  background-color:#f4f4f4;
+}
+
+/* Global */
+.container{
+  width:100%;
+  margin:auto;
+  overflow:hidden;
+}
+
+ul{
+  margin:0;
+  padding:0;
+}
+
+.button_1{
+  height:38px;
+  background:#e8491d;
+  border:0;
+  padding-left: 20px;
+  padding-right:20px;
+  color:#ffffff;
+}
+
+.dark{
+  padding:15px;
+  background:#35424a;
+  color:#ffffff;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+header{
+ background-color: rgba(0, 0, 0, 0.5);
+  color:#ffffff;
+  min-height:12px;
+  margin: auto;
+  width: 100%;
+  position:relative;
+  float: left;
+  
+}
+
+header a{
+  color:#ffffff;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size:3px;
+}
+
+header li{
+  float:right;
+  display:inline;
+  padding: 0 20px 0 20px;
+}
+
+header #branding{
+  float:left;
+}
+
+header #branding h1{
+  margin:0;
+}
+
+header nav{
+  float:right;
+  margin:5px;
+}
+
+header a:hover{
+  color:#cccccc;
+  font-weight:bold;
+}
+
+header img{
+position: relative;
+    max-width: 90px;
+    margin-left: 20px;
+    margin-top: 3px;
+    float: center;
+}
+
+
+
+#maindisplay{
+margin-top: 30px;
+  min-height:180px;
+  background-position: center;
+  background-size: cover;
+  background-image: url('https://i.imgur.com/dnGdlY4.png');
+    text-align: center;
+  color:black;
+  padding-top: 40px;
+  float: center;
+}
+
+#maindisplay h1{
+  font-size:50px;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
+  font-family: 'Minecraft', sans-serif;
+}
+
+
+#maindisplay p{
+margin-top: 1px;
+  font-size:20px;
+  color: #000000;
+   font-family: 'MinecraftiaRegular';
+   font-weight: normal;
+   font-style: normal;
+}
+#explanation{
+    margin-top: 30px;
+  height:auto;
+  max-width: 90%;
+  background-color: rgba(255, 255, 255, 0.3);
+    text-align: left;
+  color:black;
+  padding-top: 30px;
+  float: center;
+  font-family: 'MinecraftiaRegular';
+  margin: auto;  
+  margin-top: 30px;
+  padding: 20px;
+  display: flex;
+    align-items: center;
+    border-radius: 15px;
+}
+#explanation h2{
+    font-family: 'Minecraft', sans-serif;
+    color: white;    
+}
+#explanation p{
+    font-family: 'MinecraftiaRegular';
+    font-size: 80%;
+    color: rgba(255, 255, 255, 0.8);
+}
+.content{
+    flex: 1;
+}
+.text-content { 
+display: flex;
+ flex-direction: column; }
+ 
+.doggo{
+    width: 250px;
+    float: right;
+    flex-shrink: 0;
+    margin-left: 100px;
+    border-radius: 10px;
+    
+    }
+  .slideshow-container {
+  position: relative;
+  max-height: 360px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+  max-width: 1000px;
+  box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+.slides img {
+  display: none;
+  width: 110%;
+}
+
+
+.slides img.active {
+  display: block;
+  width: 110%;
+}
+
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  user-select: none;
+}
+
+
+.prev {
+  left: 0;
+}
+
+
+.next {
+  right: 0;
+}
+
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.static-image {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 50%; 
+  height: auto;
+  z-index: 999;
+}
+
+.overlay {
+  font-family: 'MinecraftiaRegular';
+  position: absolute;
+  top: calc(35% + 50px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 50%; 
+  height: auto;
+  z-index: 999;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+    
+#titlebar{
+margin-top: 1px;
+  padding:15px;
+  color:#000000;
+  background:#35424a
+  text-align: center;
+  background-position: center;
+}
+
+#titlebar h1{
+   text-align: center;
+   
+}
+
+.Others{
+margin-top: 15px;
+  color:#000000;
+  text-align: center;
+  background-position: center;
+}
+
+.Others h1{
+   text-align: center;
+   font-family: 'MinecraftiaRegular';
+   color: black;
+   font-size: 20pt;
+}
+
+
+#boxes {
+  margin: auto;
+  margin-top: 3%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  float: center;
+  margin-left: 4%;
+  margin-right:4%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-left:3%;
+  padding-bottom: 5%;
+}
+
+#boxes .box {
+  float: left;
+  max-width: 240px;
+  text-align: center;
+  width: 60%;
+  padding: 5px;
+  border-radius: 15px;
+  margin: 16px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+
+#boxes .box img{
+  max-height: 250px;
+  margin: auto;
+  position:relative;
+}
+
+
+footer{
+  padding:20px;
+  margin-top:20px;
+  color:#ffffff;
+  background-color: #111111;
+  text-align: center;
+  max-height:300px;
+  width: 100%;
+  float:left;
+}
+
+#subscription{
+    margin: auto;
+  margin-top: 2%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  float: left;
+  margin-left: 6%;
+  
+
+}
+
+#subscription h1{
+    font-family: 'Minecraft', sans-serif;
+    font-size: 30px;
+    color: white;
+    margin: 5px;
+}
+.pricing h1{
+    text-align: center;
+}
+
+.pricing p{
+    font-family: 'MinecraftiaRegular';
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.first p, .second p{
+    font-family: 'MinecraftiaRegular';
+    font-size: 13px;
+    padding: 5px;
+}
+
+.first, .second {
+float: left;
+  max-width: 400px;
+  text-align: center;
+  width: 50%;
+  padding: 5px;
+  border-radius: 15px;
+  margin: 18px;
+  margin-top: 5px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.first img, .second img {
+ width: 380px;
+ height: 320px;
+  object-fit: cover;
+}
+
+
+.scroll-container {
+  width: 100%;
+  height: 600px;
+  overflow-x: auto;
+  white-space: nowrap; 
+  position: relative;
+  max-height: 460px;
+  margin: auto;
+  border-radius: 0 0 20px 20px;
+  max-width: 890px;
+  box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  float: center;
+  background-color: rgba(255, 255, 255, 0.9)
+}
+
+
+.image-list {
+  display: inline-block; 
+  text-align: center;
+}
+
+
+.image-content {
+  display: inline-block;
+  width: 600px; 
+  height: 200px;
+    margin: 2px; 
+  vertical-align: top;
+  color: black;
+  white-space: wrap;
+  
+}
+
+.image-content h3{
+  font-family: 'MinecraftiaRegular';
+  font-size: 150%;
+  margin: 1px;
+  text-align: left;
+margin-left: 35px;
+}
+
+.image-content h2{
+  font-family: 'Montserrat';
+  font-size: 100%;
+  margin: 1px;
+  text-align: left;
+margin-left: 35px;
+color: green;
+}
+
+.image-content p{
+  font-family: 'Montserrat';
+  font-style: Italic;
+  font-size: 120%;
+  margin: 1px;
+  text-align: left;
+margin-left: 40px;
+margin-right: 70px;
+color: black;
+padding: 10px;
+}
+
+.image-content h1{
+  font-family: 'Helvetica';
+  font-size: 100%;
+  margin: 1px;
+  text-align: right;
+margin-right: 35px;
+}
+
+
+.image-content img{
+    width: 550px; 
+     height: 300px; 
+    object-fit: cover;
+}
+
+#product{
+    margin-top: 80px;
+  height:auto;
+  max-width: 890px ;
+  background-color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+  color:black;
+  padding-top: 20px;
+  float: center;
+  font-family: 'MinecraftiaRegular';
+  margin: auto;  
+  margin-top: 30px;
+  padding: 8px;
+  display: flex;
+    align-items: center;
+    width:3000px;
+        border-radius: 15px 15px 0 0;
+}
+#product h2{
+    font-family: 'Minecraft', sans-serif;
+    color: white;
+    font-size: 200%;
+    margin: 0px;
+    
+}
+#product p{
+    font-family: 'MinecraftiaRegular';
+    font-size: 100%;
+    color: rgba(0, 0, 0, 0.6);
+    padding-top: 10px;
+}
+
+
+
+@media (max-width: 898px) and (min-width: 769px) {
+    #boxes {
+  margin: auto;
+  margin-top: 3%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  float: center;
+  margin-left: 4%;
+  margin-right:4%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-left:3%;
+  padding-bottom: 5%;
+}
+
+#boxes .box {
+  float: left;
+  max-width: 180px;
+  text-align: center;
+  width: 50%;
+  padding: 5px;
+  border-radius: 15px;
+  margin: 16px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+
+#product{
+    max-width: 788px;
+    width: 100%;
+}
+
+#boxes .box img{
+  max-height: 210px;
+  margin: auto;
+  position:relative;
+  }
+  
+  
+  #subscription{
+margin: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 898px;
+    }
+    
+ 
+.first, .second {
+   width: 40%;
+   height: auto;
+       margin: 15px;
+    margin-left: 3%;
+    padding: 2%;
+}
+
+.first img, .second img {
+ width: 80%;
+ height: 200px;
+ }
+
+}
+
+
+@media (max-width: 768px) {
+  header,
+  header #branding,
+  header nav,
+  header nav li,
+  #newsletter h1,
+  #newsletter form,
+  #boxes .box,
+  article#main-col,
+  aside#sidebar {
+    float: none;
+    text-align: center;
+    width: 100%;
+  }
+  
+  #explanation {
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  #explanation h2{
+      text-align: center;
+  }
+
+  .doggo-container {
+    margin-left: 0;
+    margin-top: 20px;
+    .doggo {
+      margin-left: 0;
+    }
+    
+  }
+  .static-image {
+    max-width: 70%;
+    top: 30%;
+  }
+  .overlay {
+    min-width: 60%;
+    top: 45%;
+    font-size: 70%;
+    text-align: center;
+  }
+
+  #boxes {
+    margin: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 768px;
+    
+  }
+
+  #boxes .box {
+   width: 300px;
+    margin: 20px;
+    margin-left: 15%;
+    
+  }
+  .box img{
+      max-width: 350px;
+      height: auto;
+  }
+  
+    #subscription{
+margin: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 768px;
+  
+
+}
+
+.first, .second {
+   width: 80%;
+   height: auto;
+       margin: 20px;
+    margin-left: 10%;
+}
+
+.first img, .second img {
+ width: 90%;
+ height: 200px;
+ }
+
+.slideshow-container{
+     position: relative;
+  height: 208px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+  max-width: 890px;
+}
+
+.scroll-container {
+  width: 95%;
+  height: 400px;
+  overflow-x: auto;
+  white-space: nowrap; 
+  position: relative;
+  max-height: 460px;
+  margin: auto;
+  border-radius: 0 0 20px 20px;
+  max-width: 768px;
+  box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.6);
+  padding: 10px;
+  float: center;
+  background-color: rgba(255, 255, 255, 0.9)
+}
+
+.image-list {
+  display: inline-block; 
+  text-align: center;
+}
+
+/* Style for text content within image divs */
+.image-content {
+  display: inline-block;
+  width: 400px; 
+  height: 150px;
+    margin: 2px; 
+  vertical-align: top;
+  color: black;
+  
+white-space: wrap;
+}
+
+#product{
+    max-width: 768px;
+    width: 100%;
+}
+
+
+.image-content h3{
+  font-family: 'MinecraftiaRegular';
+  font-size: 140%;
+  margin: 1px;
+  text-align: left;
+margin-left: 35px;
+}
+.image-content h2{
+  font-family: 'Montserrat';
+  font-size: 100%;
+  margin: 1px;
+  text-align: left;
+margin-left: 35px;
+color: green;
+}
+.image-content p{
+  font-family: 'Montserrat';
+  font-size: 80%;
+  margin: 1px;
+  text-align: left;
+margin-left: 35px;
+color: black;
+
+}
+
+
+.image-content img{
+    width: 350px; /* Adjust as needed */
+     height:200px; /* Adjust as needed */ 
+    object-fit: cover;
+    }
+ .mcImage
+ {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+  #maindisplay h1{
+    margin-top:40px;
+  }
+  
+}
+  </style>
+ 
+  <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+    
+    <header>
+   <div class="container">
+      
+        <div class="mcImage">
+        <img src="https://i.imgur.com/4k11rDV.png" alt="Static Image">
+        </div>
+      </div>
+    </header>
+    
+    <div class="container">
+      
+        <div class="slideshow-container">
+          <img src="https://i.imgur.com/WZLSuEH.png" alt="Static Image" class="static-image">
+        <div class = "overlay"> 
+            <p>
+                The world is yours for making
+            </p>
+        </div>
+          <div class="slides">
+              <img src="https://i.imgur.com/fDFBqjn.jpg" alt="Slide 1" class="active">
+            <img src="https://i.imgur.com/UuXns50.jpg" alt="Slide 2" class="active">
+            <img src="https://i.imgur.com/9lmJNKt.jpg" alt="Slide 3">
+            <img src="https://i.imgur.com/FUaTo7L.jpg" alt="Slide 4">
+           
+          </div>
+          <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+          <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        </div>
+        
+    
+      </div>
+    </div>
+
+    
+      <section id="explanation"> <div class="content"> <div class="text-content"> <h2>Explore Possibilities with Minecraft</h2> <p>Minecraft is a game made up of blocks, creatures, and community. Blocks can be used to reshape the world or build fantastical creations. Creatures can be battled or befriended, depending on your playstyle. Experience epic adventures solo or with friends, there’s no wrong way to play. Unless you’re digging straight down.</p> </div> </div> <div class="doggo-container"> <img src="https://i.imgur.com/Kpyp95U.jpg" alt="Doggo Image" class="doggo"> </div> </section>
+
+
+    <section id="boxes">
+        
+<div class="Others">
+      <div class="container">
+        <h1> How to play </h1>
+      </div>
+    </div>
+
+      <div class="container">
+        <div class="box">
+          <img src="https://i.imgur.com/yCcsDdc.png">
+          <h3>Gather Resources</h3>
+          <p>Get crafty and use the surrounding environment to gather building materials—see how breaking down trees can help you create something new.</p>
+        </div>
+       <div class="box">
+          <img src="https://i.imgur.com/oZzhukK.png">
+          <h3>Survive The Night</h3>
+          <p>It’s always best to avoid the unpredictable by distancing yourself from wandering mobs—you never know what’ll happen if they get too close!</p>
+        </div>
+        <div class="box">
+          <img src="https://i.imgur.com/iBj1D3t.png">
+          <h3>Build Amazing Things</h3>
+          <p>Discover all the versatile ways dust from the redstone ore can be used to enhance your creations, bring them to life, or give them some bang.  </p>
+        </div>
+       
+        
+      </div>
+    </section>
+
+    
+<section id="subscription"> 
+    <div class="pricing">
+        <h1>Explore Game Modes</h1>
+        <p>Minecraft lets you play the way you want, whether that’s expressing your creative self or battling creepers to survive the night.</p>
+  <div class="first">
+      <h1>Survival Mode</h1>
+    <img src="https://i.imgur.com/AA9Oqsa.jpg" alt="Image 1">
+    <p>Battle mobs, construct shelter, and explore the landscape—it’s all in a day’s work when you try to survive and thrive in Survival Mode.</p>
+  </div>
+  <div class="second">
+     <h1>Creative Mode</h1>
+    <img src="https://i.imgur.com/IReRSSr.jpg" alt="Image 2">
+    <p>If you can dream it, you can build it! Put your imagination to work and terraform the world with limitless resources. </p>
+  </div>
+</div>
+</section>
+
+
+ <section id="product"> <div class="captions"> <div class="text-content"> <h2>Buy Minecraft Games</h2> <p>There is an array of options, from classic game of blocks to the most features packed mods. Find the best Minecraft game for you play style and deep dive to the limitless world of Minecraft.</p> </div> </div> 
+  </section>
+
+
+<div class="scroll-container">
+  <div class="image-list">
+      <div class="image-content">
+        <img src="https://i.imgur.com/MUreaiO.jpg" alt="Image 1">
+        <h3>MINECRAFT</h3>
+        <h2>PHP 500</h2>
+       
+        <p>There's nothing like the OG. Get the original Minecraft to experience the best ever block world.</p>
+         <h1> Available Devices: PC, Console </h1>
+      </div>
+    <div class="image-content">
+        <img src="https://i.imgur.com/yieTfep.jpg" alt="Image 1">
+        <h3>MINECRAFT DUNGEONS</h3>
+        <h2> PHP 400 </h2>
+        <p>An action-adventure game inspired by classic dungeon crawlers and set in the Minecraft universe.</p> <h1> Available Devices: Console</h1>
+      </div>
+      <div class="image-content">
+        <img src="https://i.imgur.com/Mv6hiOF.jpg" alt="Image 1">
+        <h3>VILLAGE AND PILLAGE</h3>
+        <h2>PHP 500</h2>
+        <p>Discover the most adventurous update yet! Defend against new threats, build with new blocks, and experience life in all-new villages.</p> 
+        <h1> Available Devices: PC, Console</h1>
+      </div>
+     
+     
+      <div class="image-content">
+        <img src="https://i.imgur.com/e81RKWk.jpg" alt="Image 1">
+        <h3>MINECRAFT POCKET EDITION</h3><h2>PHP 300</h2>
+        <p> A portable Minecraft application for mobile and tablet devices. </p> <h1> Available Devices: Mobile </h1>
+      </div>
+    
+  </div>
+</div>   <footer>
+      <p>Minecraft by Mark JaysonAgao, Copyright 2023</p>
+    </footer>
+  
+  <script>
+    let slideIndex = 1;
+
+function changeSlide(n) {
+  showSlides((slideIndex += n));
+}
+
+function showSlides(n) {
+  const slides = document.querySelectorAll('.slides img');
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  } else if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+
+  slides[slideIndex - 1].style.display = 'block';
+}
+
+showSlides(slideIndex);
+
+function showSlides(n) {
+  const slides = document.querySelectorAll('.slides img');
+  const backgroundColors = ['#646718','#3366bf', '#BC8151', '#36494C']; 
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  } else if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+  }
+
+  slides[slideIndex - 1].style.display = 'block';
+
+  
+  document.body.style.backgroundColor = backgroundColors[slideIndex - 1];
+}
+
+showSlides(slideIndex);
+
+  </script>
+</body>
+</html>
